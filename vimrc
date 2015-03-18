@@ -13,3 +13,7 @@ set background=dark
 highlight lCursor guifg=NONE guibg=Cyan
 command EnableSpell execute "setlocal spell spelllang=ru_ru,en_us"
 command DisableSpell execute "setlocal spell!"
+command Help execute "echo 'commands: EnableSpell, DisableSpell, Help'"
+nnoremap <kMinus> <C-U>
+nnoremap <kPlus> <C-D>
+
