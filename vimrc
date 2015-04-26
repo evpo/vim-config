@@ -16,4 +16,5 @@ command DisableSpell execute "setlocal spell!"
 command Help execute "echo 'commands: EnableSpell, DisableSpell, Help'"
 nnoremap <kMinus> <C-U>
 nnoremap <kPlus> <C-D>
+inoremap jj <ESC>
 
