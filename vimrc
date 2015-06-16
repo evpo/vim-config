@@ -25,3 +25,8 @@ nnoremap <C-_> <C-T>
 "stty ixany
 "stty ixoff -ixon
 nnoremap <C-s> :w<CR>
+let g:clang_use_library=1
+let g:clang_complete_copen=1
+let g:clang_library_path='C:/Program Files (x86)/LLVM/bin'
+"let g:clang_auto_user_options='compile_commands.json'
+"let g:clang_debug=1
