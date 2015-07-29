@@ -2,4 +2,12 @@
 
 1. Checkout to `~/vimfiles`
 2. Create `~/.vimrc` file with the following:
-3. Configure cscope `set csprg=<path to cscope executable>`
+
+```
+runtime vimrc
+nnoremap <kMinus> <C-U>
+nnoremap <kPlus> <C-D>
+inoremap jj <ESC>
+```
+
+Configure cscope `set csprg=<path to cscope executable>`
