@@ -19,7 +19,10 @@ nnoremap <kMinus> <C-U>
 nnoremap <kPlus> <C-D>
 inoremap jj <ESC>
 nnoremap <F12> <C-]>
+"nnoremap <S-F12> :tab split<CR>:cs f s <cword><CR>
+nnoremap <S-F12> :cs f s <cword><CR>
 nnoremap <C-_> <C-T>
+map <F4> :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
 
 "In putty you need to disable Ctrl S. Add these lines to your .bashrc:
 "stty ixany
