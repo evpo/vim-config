@@ -23,7 +23,11 @@ nnoremap <F12> <C-]>
 nnoremap <S-F12> :cs f s <cword><CR>
 nnoremap <C-_> <C-T>
 map <F4> :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
-
+"Tab navigation
+nnoremap th  :tabfirst<CR>
+nnoremap tk  :tabnext<CR>
+nnoremap tj  :tabprev<CR>
+nnoremap tl  :tablast<CR>
 "In putty you need to disable Ctrl S. Add these lines to your .bashrc:
 "stty ixany
 "stty ixoff -ixon
