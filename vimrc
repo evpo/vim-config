@@ -37,3 +37,6 @@ let g:clang_complete_copen=1
 let g:clang_library_path='C:/Program Files (x86)/LLVM/bin'
 "let g:clang_auto_user_options='compile_commands.json'
 "let g:clang_debug=1
+set timeoutlen=1000 ttimeoutlen=0
+nnoremap '= "+
+vnoremap '= "+
