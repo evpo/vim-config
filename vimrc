@@ -2,6 +2,9 @@
 
 "This setting should come first because it affects other settings below
 set nocompatible
+" Leader is spacebar
+let mapleader = " "
+
 syntax on
 set ignorecase
 set number
@@ -13,6 +16,45 @@ set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
 set background=dark
+set autoread " Reload files changed outside vim
+
+" Trigger autoread when changing buffers
+au FocusGained,BufEnter * :silent! !
+set cursorline
+
+set wildmenu " select files when pressing Tab
+set wildmode=list:longest,full
+
+set incsearch " fast incremental search. Only on fast terminals
+
+set showmatch " highlight matching braket
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·,nbsp:·
+" Make it obvious where 100 characters is
+set textwidth=100
+set wrapmargin=0
+set splitright
+
+" Start scrolling when we're 8 lines away from margins
+set scrolloff=8
+set sidescrolloff=15
+set sidescroll=1
+
+"Use enter to create new lines
+nnoremap <CR> o<Esc>
+" Fix issues with Enter in Command Window
+autocmd CmdwinEnter * nnoremap <CR> <CR>
+autocmd BufReadPost quickfix nnoremap <CR> <CR>
+
+" Navigate properly when lines are wrapped
+nnoremap j gj
+nnoremap k gk
+
+" Use tab to jump between blocks
+nnoremap <tab> %
+vnoremap <tab> %
+
 highlight lCursor guifg=NONE guibg=Cyan
 command! EnableSpell execute "setlocal spell spelllang=ru_ru,en_us"
 command! DisableSpell execute "setlocal spell!"
@@ -47,8 +89,25 @@ endif
 "let g:clang_auto_user_options='compile_commands.json'
 "let g:clang_debug=1
 set timeoutlen=1000 ttimeoutlen=0
+
+"System clipboard support
 nnoremap '= "+
 vnoremap '= "+
+nnoremap <leader>v "+
+vnoremap <leader>v "+
+
+" resize panes
+nnoremap <silent> <Right> :vertical resize +5<cr>
+nnoremap <silent> <Left> :vertical resize -5<cr>
+nnoremap <silent> <Down> :resize +5<cr>
+nnoremap <silent> <Up> :resize -5<cr>
+
+" quickly close window
+nnoremap <leader>x :x<cr>
+nnoremap <leader>X :q!<cr>
+
+" switch between last two files
+" nnoremap <leader><leader> <c-^>
 
 set directory=~/tmp
 
@@ -61,9 +120,24 @@ nnoremap <c-l> <c-w>l
 "tmux-navigator settings
 
 let g:tmux_navigator_save_on_switch = 1
-" let g:tmux_navigator_no_mappings = 1
-" nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
-" nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
-" nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
-" nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
-" nnoremap <silent> <c-o> :TmuxNavigatePrevious<cr>
+
+" relative numbers
+function! ToggleNumbersOn()
+    set nu!
+    set rnu
+endfunction
+
+function! ToggleRelativeOn()
+    set rnu!
+    set nu
+endfunction
+
+nnoremap <F3> :call ToggleNumbersOn()<cr>
+nnoremap <F4> :call ToggleRelativeOn()<cr>
+
+" TComment uses leader, which makes space delay in insert mode
+
+let g:tcommentMapLeader2 = '\' "{{{2
+
+" Map ctrl-n to NERD Tree
+map <C-n> :NERDTreeToggle<CR>

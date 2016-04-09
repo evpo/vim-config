@@ -30,6 +30,7 @@ if !exists("g:tcommentMapLeader2")
     " g:tcommentMapLeader2 should be a shortcut that can be used with 
     " map, xmap.
     let g:tcommentMapLeader2 = '<Leader>_' "{{{2
+    " let g:tcommentMapLeader2 = '\_' "{{{2
 endif
 
 if !exists("g:tcommentMapLeaderOp1")
