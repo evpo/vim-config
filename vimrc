@@ -140,4 +140,4 @@ nnoremap <F4> :call ToggleRelativeOn()<cr>
 let g:tcommentMapLeader2 = '\' "{{{2
 
 " Map ctrl-n to NERD Tree
-map <C-n> :NERDTreeToggle<CR>
+map <F9> :NERDTreeToggle<CR>
