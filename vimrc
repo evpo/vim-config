@@ -18,9 +18,11 @@ set imsearch=0
 set background=dark
 set autoread " Reload files changed outside vim
 
-" Trigger autoread when changing buffers
-au FocusGained,BufEnter * :silent! !
-set cursorline
+if has("unix")
+    " Trigger autoread when changing buffers
+    au FocusGained,BufEnter * :silent! !
+    set cursorline
+endif
 
 set wildmenu " select files when pressing Tab
 set wildmode=list:longest,full
@@ -30,10 +32,12 @@ set incsearch " fast incremental search. Only on fast terminals
 set showmatch " highlight matching braket
 
 " Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
+if has("unix")
+    set list listchars=tab:»·,trail:·,nbsp:·
+endif
 " Make it obvious where 100 characters is
 set textwidth=100
-set wrapmargin=0
+" set wrapmargin=0
 set splitright
 
 " Start scrolling when we're 8 lines away from margins
