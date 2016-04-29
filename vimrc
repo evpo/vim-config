@@ -21,7 +21,7 @@ set autoread " Reload files changed outside vim
 if has("unix")
     " Trigger autoread when changing buffers
     au FocusGained,BufEnter * :silent! !
-    set cursorline
+    " set cursorline
 endif
 
 set wildmenu " select files when pressing Tab
