@@ -64,12 +64,13 @@ command! EnableSpell execute "setlocal spell spelllang=ru_ru,en_us"
 command! DisableSpell execute "setlocal spell!"
 command! Help execute "echo 'commands: EnableSpell, DisableSpell, HL, Help'"
 command! HL execute "call g:ClangUpdateQuickFix()"
-nnoremap <kMinus> <C-U>
-nnoremap <kPlus> <C-D>
+noremap <Up> <C-U>
+noremap <Down> <C-D>
+" nnoremap <kMinus> <C-U>
+" nnoremap <kPlus> <C-D>
 inoremap jj <ESC>
-nnoremap <F12> <C-]>
-"nnoremap <S-F12> :tab split<CR>:cs f s <cword><CR>
-nnoremap <S-F12> :cs f s <cword><CR>
+nnoremap <F12> :cs f g <cword><CR>
+nnoremap <Leader><F12> :cs f s <cword><CR>
 nnoremap <C-_> <C-T>
 map <F4> :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
 "Tab navigation
@@ -101,10 +102,10 @@ nnoremap <leader>v "+
 vnoremap <leader>v "+
 
 " resize panes
-nnoremap <silent> <Right> :vertical resize +5<cr>
-nnoremap <silent> <Left> :vertical resize -5<cr>
-nnoremap <silent> <Down> :resize +5<cr>
-nnoremap <silent> <Up> :resize -5<cr>
+" nnoremap <silent> <Right> :vertical resize +5<cr>
+" nnoremap <silent> <Left> :vertical resize -5<cr>
+" nnoremap <silent> <Down> :resize +5<cr>
+" nnoremap <silent> <Up> :resize -5<cr>
 
 " quickly close window
 nnoremap <leader>x :x<cr>
