@@ -146,3 +146,6 @@ let g:tcommentMapLeader2 = '\' "{{{2
 
 " Map ctrl-n to NERD Tree
 map <F9> :NERDTreeToggle<CR>
+
+" Source files in vimgrep
+let @s = "./**/*.c ./**/*.h ./**/*.hpp ./**/*.cpp"
