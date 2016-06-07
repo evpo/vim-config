@@ -64,6 +64,7 @@ command! EnableSpell execute "setlocal spell spelllang=ru_ru,en_us"
 command! DisableSpell execute "setlocal spell!"
 command! Help execute "echo 'commands: EnableSpell, DisableSpell, HL, Help'"
 command! HL execute "call g:ClangUpdateQuickFix()"
+command! D execute "tab sp"
 noremap <Up> <C-U>
 noremap <Down> <C-D>
 " nnoremap <kMinus> <C-U>
@@ -146,6 +147,9 @@ let g:tcommentMapLeader2 = '\' "{{{2
 
 " Map ctrl-n to NERD Tree
 map <F9> :NERDTreeToggle<CR>
+
+" ctrl-p section
+let g:ctrlp_working_path_mode = '0'
 
 " Source files in vimgrep
 let @s = "./**/*.c ./**/*.h ./**/*.hpp ./**/*.cpp"
