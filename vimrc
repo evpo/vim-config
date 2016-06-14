@@ -153,3 +153,7 @@ let g:ctrlp_working_path_mode = '0'
 
 " Source files in vimgrep
 let @s = "./**/*.c ./**/*.h ./**/*.hpp ./**/*.cpp"
+
+" Insert space
+nnoremap <leader>s i<space><esc>
+
