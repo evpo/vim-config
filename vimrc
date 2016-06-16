@@ -65,6 +65,7 @@ command! DisableSpell execute "setlocal spell!"
 command! Help execute "echo 'commands: EnableSpell, DisableSpell, HL, Help'"
 command! HL execute "call g:ClangUpdateQuickFix()"
 command! D execute "tab sp"
+command! DA execute "tab sp | A"
 noremap <Up> <C-U>
 noremap <Down> <C-D>
 " nnoremap <kMinus> <C-U>
