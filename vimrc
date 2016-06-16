@@ -150,7 +150,9 @@ map <F9> :NERDTreeToggle<CR>
 
 " ctrl-p section
 let g:ctrlp_working_path_mode = '0'
-
+let g:ctrlp_custom_ignore = {
+            \ 'file': '\v\.(exe|so|dll|obj|o)$'
+            \ }
 " Source files in vimgrep
 let @s = "./**/*.c ./**/*.h ./**/*.hpp ./**/*.cpp"
 
