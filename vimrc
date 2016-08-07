@@ -36,7 +36,7 @@ if has("unix")
     set list listchars=tab:»·,trail:·,nbsp:·
 endif
 " Make it obvious where 100 characters is
-set textwidth=100
+" set textwidth=100
 " set wrapmargin=0
 set splitright
 
