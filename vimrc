@@ -160,3 +160,8 @@ let @s = "./**/*.c ./**/*.h ./**/*.hpp ./**/*.cpp"
 " Insert space
 nnoremap <leader>s i<space><esc>
 
+" Paste the same value multiple
+vnoremap p "0p
+
+" Copy file name to the buffer
+command! GetFile execute "let @+=expand('%:t')"
