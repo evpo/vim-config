@@ -98,10 +98,12 @@ endif
 set timeoutlen=1000 ttimeoutlen=0
 
 "System clipboard support
-nnoremap '= "+
-vnoremap '= "+
 nnoremap <leader>v "+
 vnoremap <leader>v "+
+
+"Simplified access to 0 register
+nnoremap <leader>p "0
+vnoremap <leader>p "0
 
 " resize panes
 " nnoremap <silent> <Right> :vertical resize +5<cr>
@@ -112,6 +114,7 @@ vnoremap <leader>v "+
 " quickly close window
 nnoremap <leader>x :x<cr>
 nnoremap <leader>X :q!<cr>
+nnoremap <leader>q :q<cr>
 
 " switch between last two files
 " nnoremap <leader><leader> <c-^>
@@ -165,3 +168,11 @@ vnoremap p "0p
 
 " Copy file name to the buffer
 command! GetFile execute "let @+=expand('%:t')"
+
+" Line navigation
+nnoremap <leader>h _
+nnoremap <leader>l $
+
+" Empty line
+nnoremap <leader>j o<ESC>
+nnoremap <leader>k O<ESC>
