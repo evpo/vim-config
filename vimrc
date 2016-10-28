@@ -176,3 +176,6 @@ nnoremap <leader>l $
 " Empty line
 nnoremap <leader>j o<ESC>
 nnoremap <leader>k O<ESC>
+
+" Select a block. It selects a function body
+nnoremap <c-b> vaB
