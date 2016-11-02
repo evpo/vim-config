@@ -167,7 +167,7 @@ nnoremap <leader>s i<space><esc>
 vnoremap p "0p
 
 " Copy file name to the buffer
-command! GetFile execute "let @+=expand('%:t')"
+command! GetFile execute "let @+=expand('%:t') . ':' . line('.')"
 
 " Line navigation
 nnoremap <leader>h _
