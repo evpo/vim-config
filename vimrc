@@ -71,8 +71,11 @@ noremap <Down> <C-D>
 " nnoremap <kMinus> <C-U>
 " nnoremap <kPlus> <C-D>
 inoremap jj <ESC>
-nnoremap <F12> :cs f g <cword><CR>
+
+" code navigation
+nnoremap <F12> <C-]>
 nnoremap <Leader><F12> :cs f s <cword><CR>
+nnoremap <Leader>w :call g:ClangGotoDeclarationPreview()<CR>
 nnoremap <C-_> <C-T>
 map <F4> :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
 "Tab navigation
