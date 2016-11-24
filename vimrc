@@ -182,3 +182,7 @@ nnoremap <leader>k O<ESC>
 
 " Select a block. It selects a function body
 nnoremap <c-b> vaB
+
+if has('gui_running')
+    colo darkblue
+endif
