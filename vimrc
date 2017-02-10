@@ -59,6 +59,12 @@ nnoremap k gk
 nnoremap <tab> %
 vnoremap <tab> %
 
+function! UpdateCscope()
+    cs kill 0
+    !update-cscope
+    cs add cscope.out
+endfunction
+
 highlight lCursor guifg=NONE guibg=Cyan
 command! EnableSpell execute "setlocal spell spelllang=ru_ru,en_us"
 command! DisableSpell execute "setlocal spell!"
@@ -66,6 +72,7 @@ command! Help execute "echo 'commands: EnableSpell, DisableSpell, HL, Help'"
 command! HL execute "call g:ClangUpdateQuickFix()"
 command! D execute "tab sp"
 command! DA execute "tab sp | A"
+command! UCS execute "call UpdateCscope()"
 noremap <Up> <C-U>
 noremap <Down> <C-D>
 " nnoremap <kMinus> <C-U>
