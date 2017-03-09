@@ -98,7 +98,7 @@ let g:clang_use_library=1
 let g:clang_complete_copen=1
 
 if has("unix")
-    let g:clang_library_path='/usr/lib/llvm-3.6/lib/'
+    " let g:clang_library_path='/usr/lib/llvm-3.6/lib/'
 else
     let g:clang_library_path='C:/Program Files (x86)/LLVM/bin'
 endif
