@@ -81,6 +81,7 @@ inoremap jj <ESC>
 
 " code navigation
 nnoremap <F12> :call g:ClangGotoDeclaration()<CR>
+nnoremap <F7> :call g:ClangUpdateQuickFix()<CR>
 nnoremap <Leader><F12> :cs f s <cword><CR>
 nnoremap <Leader>w :call g:ClangGotoDeclarationPreview()<CR>
 nnoremap <C-_> <C-T>
