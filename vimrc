@@ -65,14 +65,20 @@ function! UpdateCscope()
     cs add cscope.out
 endfunction
 
+function! ReloadCscope()
+    cs kill 0
+    cs add cscope.out
+endfunction
+
 highlight lCursor guifg=NONE guibg=Cyan
 command! EnableSpell execute "setlocal spell spelllang=ru_ru,en_us"
 command! DisableSpell execute "setlocal spell!"
-command! Help execute "echo 'commands: EnableSpell, DisableSpell, HL, Help'"
+command! HELP execute "echo 'commands: EnableSpell, DisableSpell, HL, UCS, RCS, Help'"
 command! HL execute "call g:ClangUpdateQuickFix()"
 command! D execute "tab sp"
 command! DA execute "tab sp | A"
 command! UCS execute "call UpdateCscope()"
+command! RCS execute "call ReloadCscope()"
 noremap <Up> <C-U>
 noremap <Down> <C-D>
 " nnoremap <kMinus> <C-U>
