@@ -46,10 +46,10 @@ set sidescrolloff=15
 set sidescroll=1
 
 "Use enter to create new lines
-nnoremap <CR> o<Esc>
+" nnoremap <CR> o<Esc>
 " Fix issues with Enter in Command Window
-autocmd CmdwinEnter * nnoremap <CR> <CR>
-autocmd BufReadPost quickfix nnoremap <CR> <CR>
+" autocmd CmdwinEnter * nnoremap <CR> <CR>
+" autocmd BufReadPost quickfix nnoremap <CR> <CR>
 
 " Navigate properly when lines are wrapped
 nnoremap j gj
