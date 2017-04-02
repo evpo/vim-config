@@ -65,14 +65,20 @@ function! UpdateCscope()
     cs add cscope.out
 endfunction
 
+function! ReloadCscope()
+    cs kill 0
+    cs add cscope.out
+endfunction
+
 highlight lCursor guifg=NONE guibg=Cyan
 command! EnableSpell execute "setlocal spell spelllang=ru_ru,en_us"
 command! DisableSpell execute "setlocal spell!"
-command! Help execute "echo 'commands: EnableSpell, DisableSpell, HL, Help'"
+command! HELP execute "echo 'commands: EnableSpell, DisableSpell, HL, UCS, RCS, Help'"
 command! HL execute "call g:ClangUpdateQuickFix()"
 command! D execute "tab sp"
 command! DA execute "tab sp | A"
 command! UCS execute "call UpdateCscope()"
+command! RCS execute "call ReloadCscope()"
 noremap <Up> <C-U>
 noremap <Down> <C-D>
 " nnoremap <kMinus> <C-U>
@@ -81,6 +87,7 @@ inoremap jj <ESC>
 
 " code navigation
 nnoremap <F12> :call g:ClangGotoDeclaration()<CR>
+nnoremap <F7> :call g:ClangUpdateQuickFix()<CR>
 nnoremap <Leader><F12> :cs f s <cword><CR>
 nnoremap <Leader>w :call g:ClangGotoDeclarationPreview()<CR>
 nnoremap <C-_> <C-T>
@@ -98,7 +105,7 @@ let g:clang_use_library=1
 let g:clang_complete_copen=1
 
 if has("unix")
-    let g:clang_library_path='/usr/lib/llvm-3.6/lib/'
+    " let g:clang_library_path='/usr/lib/llvm-3.6/lib/'
 else
     let g:clang_library_path='C:/Program Files (x86)/LLVM/bin'
 endif
