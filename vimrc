@@ -91,7 +91,7 @@ nnoremap <F7> :call g:ClangUpdateQuickFix()<CR>
 nnoremap <Leader><F12> :cs f s <cword><CR>
 nnoremap <Leader>w :call g:ClangGotoDeclarationPreview()<CR>
 nnoremap <C-_> <C-T>
-map <F4> :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
+nnoremap <F4> :A<CR>
 "Tab navigation
 nnoremap th  :tabfirst<CR>
 nnoremap tk  :tabnext<CR>
@@ -160,7 +160,7 @@ function! ToggleRelativeOn()
 endfunction
 
 nnoremap <F3> :call ToggleNumbersOn()<cr>
-nnoremap <F4> :call ToggleRelativeOn()<cr>
+" nnoremap <F4> :call ToggleRelativeOn()<cr>
 
 " TComment uses leader, which makes space delay in insert mode
 
