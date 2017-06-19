@@ -88,7 +88,6 @@ inoremap jj <ESC>
 " code navigation
 nnoremap <F12> :call g:ClangGotoDeclaration()<CR>
 nnoremap <F7> :call g:ClangUpdateQuickFix()<CR>
-nnoremap <Leader><F12> :cs f s <cword><CR>
 nnoremap <Leader>w :call g:ClangGotoDeclarationPreview()<CR>
 nnoremap <C-_> <C-T>
 nnoremap <F4> :A<CR>
@@ -199,3 +198,8 @@ if has('gui_running')
 endif
 inoremap <F1> {
 inoremap <F2> }
+
+" Quick Cscope
+let g:quickr_cscope_keymaps = 0
+let g:quickr_cscope_autoload_db = 0
+nmap <leader><F12> <plug>(quickr_cscope_symbols)
