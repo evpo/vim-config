@@ -7,7 +7,7 @@ let mapleader = " "
 
 syntax on
 set ignorecase
-set number
+set rnu
 filetype indent on
 set shiftwidth=4
 set tabstop=4
