@@ -203,4 +203,6 @@ inoremap <F2> }
 " Quick Cscope
 let g:quickr_cscope_keymaps = 0
 let g:quickr_cscope_autoload_db = 0
+let g:quickr_cscope_use_qf_g = 1
 nmap <leader><F12> <plug>(quickr_cscope_symbols)
+nmap <leader>g<F12> <plug>(quickr_cscope_global)
