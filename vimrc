@@ -197,3 +197,5 @@ nnoremap <c-b> vaB
 if has('gui_running')
     colo darkblue
 endif
+inoremap <F1> {
+inoremap <F2> }
