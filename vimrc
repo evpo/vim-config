@@ -197,8 +197,8 @@ nnoremap <c-b> vaB
 if has('gui_running')
     colo darkblue
 endif
-inoremap <F1> {
-inoremap <F2> }
+inoremap <F2> {
+inoremap <F3> }
 
 " Quick Cscope
 let g:quickr_cscope_keymaps = 0
