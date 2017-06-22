@@ -70,6 +70,10 @@ function! ReloadCscope()
     cs add cscope.out
 endfunction
 
+function! AddCpp(base_name)
+    !./scripts/add-cpp a:base_name
+endfunction
+
 highlight lCursor guifg=NONE guibg=Cyan
 command! EnableSpell execute "setlocal spell spelllang=ru_ru,en_us"
 command! DisableSpell execute "setlocal spell!"
@@ -79,6 +83,8 @@ command! D execute "tab sp"
 command! DA execute "tab sp | A"
 command! UCS execute "call UpdateCscope()"
 command! RCS execute "call ReloadCscope()"
+command! -nargs=1 Addcpp call AddCpp(<q-args>)
+command! -nargs=1 Removecpp execute "!./scripts/remove-cpp " string(<q-args>)
 noremap <Up> <C-U>
 noremap <Down> <C-D>
 " nnoremap <kMinus> <C-U>
