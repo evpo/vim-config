@@ -86,6 +86,8 @@ command! UCS execute "call UpdateCscope()"
 command! RCS execute "call ReloadCscope()"
 command! -nargs=1 Addcpp call AddCpp(<q-args>)
 command! -nargs=1 Removecpp execute "!./scripts/remove-cpp " string(<q-args>)
+
+nnoremap <Leader><F4> :D<CR>
 noremap <Up> <C-U>
 noremap <Down> <C-D>
 " nnoremap <kMinus> <C-U>
@@ -179,7 +181,7 @@ map <F9> :NERDTreeToggle<CR>
 let g:ctrlp_working_path_mode = '0'
 let g:ctrlp_follow_symlinks = '1'
 let g:ctrlp_custom_ignore = {
-            \ 'file': '\v\.(exe|so|dll|obj|o|d)$'
+            \ 'file': '\v\.(exe|so|dll|obj|o|d|dep)$'
             \ }
 " Source files in vimgrep
 let @s = "./**/*.c ./**/*.h ./**/*.hpp ./**/*.cpp"
