@@ -72,7 +72,7 @@ endfunction
 
 function! AddCpp(base_name)
     silent execute '!./scripts/add-cpp ' . a:base_name
-    execute 'tabe src/' . a:base_name . '.cpp'
+    " execute 'tabe src/' . a:base_name . '.cpp'
 endfunction
 
 highlight lCursor guifg=NONE guibg=Cyan
