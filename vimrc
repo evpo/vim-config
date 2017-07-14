@@ -61,7 +61,7 @@ vnoremap <tab> %
 
 function! UpdateCscope()
     cs kill 0
-    !update-cscope
+    !if [ -x scripts/update-cscope ]; then scripts/update-cscope; else update-cscope; fi
     cs add cscope.out
 endfunction
 
