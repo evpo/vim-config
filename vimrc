@@ -189,6 +189,9 @@ let @s = "./**/*.c ./**/*.h ./**/*.hpp ./**/*.cpp"
 " Insert space
 nnoremap <leader>s i<space><esc>
 
+" Split line
+nnoremap <leader>e i<CR><esc>
+
 " Copy file name to the buffer
 command! GetFile execute "let @+=expand('%:t') . ':' . line('.')"
 
