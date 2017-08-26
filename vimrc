@@ -92,7 +92,7 @@ noremap <Up> <C-U>
 noremap <Down> <C-D>
 " nnoremap <kMinus> <C-U>
 " nnoremap <kPlus> <C-D>
-inoremap jj <ESC>
+inoremap jk <ESC>
 
 " code navigation
 nnoremap <F12> :call g:ClangGotoDeclaration()<CR>
