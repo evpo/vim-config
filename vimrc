@@ -175,7 +175,7 @@ nnoremap <F3> :call ToggleNumbersOn()<cr>
 let g:tcommentMapLeader2 = '\' "{{{2
 
 " Map ctrl-n to NERD Tree
-map <F9> :NERDTreeToggle<CR>
+map <F9> :NERDTreeToggle<CR><F3>
 
 " ctrl-p section
 let g:ctrlp_working_path_mode = '0'
