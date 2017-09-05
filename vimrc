@@ -17,6 +17,7 @@ set iminsert=0
 set imsearch=0
 set background=dark
 set autoread " Reload files changed outside vim
+set cursorline
 
 if has("unix")
     " Trigger autoread when changing buffers
@@ -78,7 +79,7 @@ endfunction
 highlight lCursor guifg=NONE guibg=Cyan
 command! EnableSpell execute "setlocal spell spelllang=ru_ru,en_us"
 command! DisableSpell execute "setlocal spell!"
-command! HELP execute "echo 'commands: EnableSpell, DisableSpell, HL, UCS, RCS, Help'"
+command! Help execute "echo 'commands: EnableSpell, DisableSpell, HL, UCS, RCS, Help\nkeys: C-d - _ C-f - $ C-Space - auto-complete C-t-F12 - go to definition C-r space'"
 command! HL execute "call g:ClangUpdateQuickFix()"
 command! D execute "tab sp"
 command! DA execute "tab sp | A"
@@ -111,6 +112,9 @@ nnoremap tl  :tablast<CR>
 nnoremap <silent> <c-s> :w<CR>
 let g:clang_use_library=1
 let g:clang_complete_copen=1
+set completeopt=menu
+inoremap <Tab> <C-R>=pumvisible() ? "\<lt>C-N>\<lt>C-y>" : "\<lt>Tab>"<CR>
+inoremap <C-@> <C-R>="\<lt>C-X>\<lt>C-U>\<lt>C-P>"<CR>
 
 if has("unix")
     " let g:clang_library_path='/usr/lib/llvm-3.6/lib/'
@@ -187,7 +191,7 @@ let g:ctrlp_custom_ignore = {
 let @s = "./**/*.c ./**/*.h ./**/*.hpp ./**/*.cpp"
 
 " Insert space
-nnoremap <leader>s i<space><esc>
+nnoremap <leader>r i<space><esc>
 
 " Split line
 nnoremap <leader>e i<CR><esc>
@@ -196,8 +200,8 @@ nnoremap <leader>e i<CR><esc>
 command! GetFile execute "let @+=expand('%:t') . ':' . line('.')"
 
 " Line navigation
-nnoremap <leader>h _
-nnoremap <leader>l $
+nnoremap <leader>d _
+nnoremap <leader>f $
 
 " Empty line
 nnoremap <leader>j o<ESC>
@@ -217,4 +221,4 @@ let g:quickr_cscope_keymaps = 0
 let g:quickr_cscope_autoload_db = 0
 let g:quickr_cscope_use_qf_g = 1
 nmap <leader><F12> <plug>(quickr_cscope_symbols)
-nmap <leader>g<F12> <plug>(quickr_cscope_global)
+nmap <leader>t<F12> <plug>(quickr_cscope_global)
