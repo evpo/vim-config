@@ -18,6 +18,7 @@ set imsearch=0
 set background=dark
 set autoread " Reload files changed outside vim
 set cursorline
+set laststatus=2
 
 if has("unix")
     " Trigger autoread when changing buffers
