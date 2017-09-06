@@ -223,3 +223,8 @@ let g:quickr_cscope_autoload_db = 0
 let g:quickr_cscope_use_qf_g = 1
 nmap <leader><F12> <plug>(quickr_cscope_symbols)
 nmap <leader>t<F12> <plug>(quickr_cscope_global)
+
+" Mouse scrolling
+set mouse=a
+noremap <ScrollWheelUp> <C-U>
+noremap <ScrollWheelDown> <C-D>
