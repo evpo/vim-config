@@ -80,7 +80,7 @@ endfunction
 highlight lCursor guifg=NONE guibg=Cyan
 command! EnableSpell execute "setlocal spell spelllang=ru_ru,en_us"
 command! DisableSpell execute "setlocal spell!"
-command! Help execute "echo 'commands: EnableSpell, DisableSpell, HL, UCS, RCS, Help\nkeys: C-d - _ C-f - $ C-Space - auto-complete C-t-F12 - go to definition C-r space'"
+command! Help execute "echo 'commands: EnableSpell, DisableSpell, HL, UCS, RCS, Cp, Help\nkeys: Leader-r space, Leader-e new line'"
 command! HL execute "call g:ClangUpdateQuickFix()"
 command! D execute "tab sp"
 command! DA execute "tab sp | A"
@@ -198,7 +198,7 @@ nnoremap <leader>r i<space><esc>
 nnoremap <leader>e i<CR><esc>
 
 " Copy file name to the buffer
-command! GetFile execute "let @+=expand('%:t') . ':' . line('.')"
+command! Cp execute "let @+=expand('%:t') . ':' . line('.')"
 
 " Line navigation
 nnoremap <leader>d _
