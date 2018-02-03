@@ -1,5 +1,8 @@
 "Type :so % to reload vimrc
 
+" Pathogen
+execute pathogen#infect()
+
 "This setting should come first because it affects other settings below
 set nocompatible
 " Leader is spacebar
