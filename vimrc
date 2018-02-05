@@ -19,7 +19,6 @@ set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
 set background=light
-hi StatusLine ctermbg=Black
 color zellner
 set autoread " Reload files changed outside vim
 set cursorline
