@@ -21,7 +21,7 @@ set imsearch=0
 set background=light
 color zellner
 set autoread " Reload files changed outside vim
-set cursorline
+" set cursorline
 set laststatus=2
 
 if has("unix")
@@ -82,6 +82,8 @@ function! AddCpp(base_name)
 endfunction
 
 highlight lCursor guifg=NONE guibg=Cyan
+highlight Visual ctermfg=Black ctermbg=White
+
 command! EnableSpell execute "setlocal spell spelllang=ru_ru,en_us"
 command! DisableSpell execute "setlocal spell!"
 command! Help execute "echo 'commands: EnableSpell, DisableSpell, HL, UCS, RCS, Cp, Help\nkeys: Leader-r space, Leader-e new line'"
