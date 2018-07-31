@@ -236,5 +236,5 @@ noremap <ScrollWheelUp> <C-U>
 noremap <ScrollWheelDown> <C-D>
 
 " vimux
-nnoremap <leader>vp :VimuxPromptCommand<CR>
+nnoremap <leader>vr :VimuxPromptCommand<CR>
 nnoremap <leader>vl :VimuxRunLastCommand<CR>
