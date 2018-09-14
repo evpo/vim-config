@@ -238,3 +238,7 @@ noremap <ScrollWheelDown> <C-D>
 " vimux
 nnoremap <leader>vr :VimuxPromptCommand<CR>
 nnoremap <leader>vl :VimuxRunLastCommand<CR>
+
+" Format xml
+com! Xmllint :%!xmllint --format -
+
