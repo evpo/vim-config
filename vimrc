@@ -5,6 +5,24 @@ execute pathogen#infect()
 
 "This setting should come first because it affects other settings below
 set nocompatible
+filetype off
+
+" --------------
+" Begin Vundle
+" set the runtime path to include Vundle and initialize
+" Run the command below to install
+" python3 install.py --clang-completer --cs-completer --java-completer
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" All of your Plugins must be added before the following line
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'gregsexton/gitv'
+call vundle#end()            " required
+filetype plugin indent on    " required
+" End Vundle
+" --------------
+
 " Leader is spacebar
 let mapleader = " "
 
@@ -103,8 +121,10 @@ noremap <Down> <C-D>
 inoremap jk <ESC>
 
 " code navigation
-nnoremap <F12> :call g:ClangGotoDeclaration()<CR>
-nnoremap <F7> :call g:ClangUpdateQuickFix()<CR>
+" nnoremap <F12> :call g:ClangGotoDeclaration()<CR>
+nnoremap <F12> :YcmCompleter GoTo<CR>
+" nnoremap <F7> :call g:ClangUpdateQuickFix()<CR>
+nnoremap <F7> ::YcmForceCompileAndDiagnostics<CR>
 nnoremap <Leader>w :call g:ClangGotoDeclarationPreview()<CR>
 nnoremap <C-_> <C-T>
 nnoremap <F4> :A<CR>
@@ -228,6 +248,8 @@ let g:quickr_cscope_keymaps = 0
 let g:quickr_cscope_autoload_db = 0
 let g:quickr_cscope_use_qf_g = 1
 nmap <leader><F12> <plug>(quickr_cscope_symbols)
+" Use below for other languages such as Java
+" nmap <leader><F12> :YcmCompleter GoToReferences<CR>
 nmap <leader>t<F12> <plug>(quickr_cscope_global)
 
 " Mouse scrolling
