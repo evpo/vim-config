@@ -158,8 +158,8 @@ nnoremap <leader>v "+
 vnoremap <leader>v "+
 
 "Simplified access to 0 register
-nnoremap <leader>p "0
-vnoremap <leader>p "0
+nnoremap <leader>o "0
+vnoremap <leader>o "0
 
 " resize panes
 " nnoremap <silent> <Right> :vertical resize +5<cr>
@@ -264,3 +264,5 @@ nnoremap <leader>vl :VimuxRunLastCommand<CR>
 " Format xml
 com! Xmllint :%!xmllint --format -
 
+" Smart paste
+nnoremap <leader>p :call SmartPaste()<CR>
