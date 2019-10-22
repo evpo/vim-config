@@ -205,8 +205,11 @@ nnoremap <F3> :call ToggleNumbersOn()<cr>
 
 let g:tcommentMapLeader2 = '\' "{{{2
 
+" NERDTree
 " Map ctrl-n to NERD Tree
 map <F9> :NERDTreeToggle<CR><F3>
+" Ignore certain files
+let NERDTreeIgnore=['\.o$[[file]]','\.d$[[file]]']
 
 " ctrl-p section
 let g:ctrlp_working_path_mode = '0'
