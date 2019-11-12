@@ -113,7 +113,30 @@ command! RCS execute "call ReloadCscope()"
 command! -nargs=1 Addcpp call AddCpp(<q-args>)
 command! -nargs=1 Removecpp execute "!./scripts/remove-cpp " string(<q-args>)
 
+" tabs
 nnoremap <Leader><F4> :D<CR>
+
+function! Mtab(vert)
+    +tabnext
+    let s:killed_tab = tabpagenr()
+    let s:buf_list = tabpagebuflist()
+    -tabnext
+    for item in s:buf_list
+        if a:vert
+            vsp
+        else
+            sp
+        endif
+        execute "buf " . item
+    endfor
+    execute "tabclose " . s:killed_tab
+endfunction
+
+command! Mtabsp call Mtab(0)
+command! Mtabvsp call Mtab(1)
+
+" end tabs
+
 noremap <Up> <C-U>
 noremap <Down> <C-D>
 " nnoremap <kMinus> <C-U>
