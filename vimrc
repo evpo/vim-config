@@ -117,6 +117,9 @@ command! -nargs=1 Removecpp execute "!./scripts/remove-cpp " string(<q-args>)
 nnoremap <Leader><F4> :D<CR>
 
 function! Mtab(vert)
+    if tabpagenr() == tabpagenr("$")
+        return 0
+    endif
     +tabnext
     let s:killed_tab = tabpagenr()
     let s:buf_list = tabpagebuflist()
