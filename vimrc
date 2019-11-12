@@ -125,7 +125,6 @@ inoremap jk <ESC>
 nnoremap <F12> :YcmCompleter GoTo<CR>
 " nnoremap <F7> :call g:ClangUpdateQuickFix()<CR>
 nnoremap <F7> ::YcmForceCompileAndDiagnostics<CR>
-nnoremap <Leader>w :call g:ClangGotoDeclarationPreview()<CR>
 nnoremap <C-_> <C-T>
 nnoremap <F4> :A<CR>
 "Tab navigation
@@ -133,6 +132,14 @@ nnoremap th  :tabfirst<CR>
 nnoremap tk  :tabnext<CR>
 nnoremap tj  :tabprev<CR>
 nnoremap tl  :tablast<CR>
+
+"Resize windows
+
+nnoremap <Leader>wh :vert resize -20<CR>
+nnoremap <Leader>wl :vert resize +20<CR>
+nnoremap <Leader>wk :resize -10<CR>
+nnoremap <Leader>wj :resize +10<CR>
+"
 "In putty you need to disable Ctrl S. Add these lines to your .bashrc:
 "stty ixany
 "stty ixoff -ixon
