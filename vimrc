@@ -261,6 +261,7 @@ nnoremap <leader>e i<CR><esc>
 
 " Copy file name to the buffer
 command! Cp execute "let @+=expand('%:t') . ':' . line('.')"
+command! Cpfn execute "let @+=expand('%') . ':' . line('.')"
 
 " Line navigation
 nnoremap <leader>d _
