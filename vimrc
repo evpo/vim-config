@@ -246,6 +246,7 @@ let NERDTreeIgnore=['\.o$[[file]]','\.d$[[file]]']
 
 " ctrl-p section
 let g:ctrlp_working_path_mode = '0'
+let g:ctrlp_max_files = 40000
 let g:ctrlp_follow_symlinks = '1'
 let g:ctrlp_custom_ignore = {
             \ 'file': '\v\.(exe|so|dll|obj|o|d|dep)$'
@@ -262,6 +263,7 @@ nnoremap <leader>e i<CR><esc>
 " Copy file name to the buffer
 command! Cp execute "let @+=expand('%:t') . ':' . line('.')"
 command! Cpfn execute "let @+=expand('%') . ':' . line('.')"
+command! Cpabs execute "let @+=expand('%:p') . ':' . line('.')"
 
 " Line navigation
 nnoremap <leader>d _
