@@ -291,6 +291,7 @@ nmap <leader><F12> <plug>(quickr_cscope_symbols)
 " nmap <leader><F12> :YcmCompleter GoToReferences<CR>
 nmap <leader>t<F12> <plug>(quickr_cscope_global)
 nmap <leader>tp :CtrlPTag<CR>
+nmap <leader>tf :YcmCompleter FixIt<CR>
 
 " Mouse scrolling
 set mouse=a
