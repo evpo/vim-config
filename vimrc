@@ -290,6 +290,7 @@ nmap <leader><F12> <plug>(quickr_cscope_symbols)
 " Use below for other languages such as Java
 " nmap <leader><F12> :YcmCompleter GoToReferences<CR>
 nmap <leader>t<F12> <plug>(quickr_cscope_global)
+nmap <leader>tp :CtrlPTag<CR>
 
 " Mouse scrolling
 set mouse=a
