@@ -25,7 +25,6 @@ filetype plugin indent on    " required
 
 " Leader is spacebar
 let mapleader = " "
-
 syntax on
 set ignorecase
 set rnu
@@ -41,6 +40,7 @@ color zellner
 set autoread " Reload files changed outside vim
 " set cursorline
 set laststatus=2
+set encoding=utf-8
 
 if has("unix")
     " Trigger autoread when changing buffers
@@ -57,7 +57,7 @@ set showmatch " highlight matching braket
 
 " Display extra whitespace
 if has("unix")
-    set list listchars=tab:»·,trail:·,nbsp:·
+    set list listchars=tab:»·,trail:·
 endif
 " Make it obvious where 100 characters is
 " set textwidth=100
