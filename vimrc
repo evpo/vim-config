@@ -170,7 +170,7 @@ nnoremap <Leader>wj :resize +10<CR>
 "stty ixany
 "stty ixoff -ixon
 nnoremap <silent> <c-s> :w<CR>
-let g:clang_use_library=1
+"let g:clang_use_library=1
 let g:clang_complete_copen=1
 set completeopt=menu
 inoremap <Tab> <C-R>=pumvisible() ? "\<lt>C-N>\<lt>C-y>" : "\<lt>Tab>"<CR>
