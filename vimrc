@@ -37,7 +37,8 @@ set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
 set background=light
-color zellner
+" color zellner
+color vc
 set autoread " Reload files changed outside vim
 " set cursorline
 set laststatus=2
@@ -172,7 +173,8 @@ nnoremap <Leader>wj :resize +10<CR>
 "stty ixoff -ixon
 nnoremap <silent> <c-s> :w<CR>
 "let g:clang_use_library=1
-let g:clang_complete_copen=1
+" TODO: activate clang again
+"let g:clang_complete_copen=1
 set completeopt=menu
 inoremap <Tab> <C-R>=pumvisible() ? "\<lt>C-N>\<lt>C-y>" : "\<lt>Tab>"<CR>
 inoremap <C-@> <C-R>="\<lt>C-X>\<lt>C-U>\<lt>C-P>"<CR>
@@ -298,3 +300,5 @@ nnoremap <leader>p :call SmartPaste()<CR>
 
 " Tagbar
 nnoremap <F3> :TagbarToggle f<CR>:set rnu<CR>
+" YCM
+let g:ycm_auto_hover=''
