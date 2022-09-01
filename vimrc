@@ -227,7 +227,7 @@ let g:tcommentMapLeader2 = '\' "{{{2
 
 " NERDTree
 " Map ctrl-n to NERD Tree
-map <F9> :NERDTreeToggle<CR>
+map <F9> :NERDTreeToggle<CR>:set rnu<CR>
 nnoremap <leader><F9> :NERDTreeFind<CR>:set rnu<CR>
 " Ignore certain files
 let NERDTreeIgnore=['\.o$[[file]]','\.d$[[file]]']
