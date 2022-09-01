@@ -28,6 +28,7 @@ let mapleader = " "
 syntax on
 set ignorecase
 set rnu
+set nu
 filetype indent on
 set shiftwidth=4
 set tabstop=4
@@ -220,28 +221,14 @@ nnoremap <c-l> <c-w>l
 
 let g:tmux_navigator_save_on_switch = 1
 
-" relative numbers
-function! ToggleNumbersOn()
-    set nu!
-    set rnu
-endfunction
-
-function! ToggleRelativeOn()
-    set rnu!
-    set nu
-endfunction
-
-nnoremap <F3> :call ToggleNumbersOn()<cr>
-" nnoremap <F4> :call ToggleRelativeOn()<cr>
-
 " TComment uses leader, which makes space delay in insert mode
 
 let g:tcommentMapLeader2 = '\' "{{{2
 
 " NERDTree
 " Map ctrl-n to NERD Tree
-map <F9> :NERDTreeToggle<CR><F3>
-nnoremap <leader><F9> :NERDTreeFind<CR><F3>
+map <F9> :NERDTreeToggle<CR>
+nnoremap <leader><F9> :NERDTreeFind<CR>:set rnu<CR>
 " Ignore certain files
 let NERDTreeIgnore=['\.o$[[file]]','\.d$[[file]]']
 
@@ -308,3 +295,6 @@ com! Xmllint :%!xmllint --format -
 
 " Smart paste
 nnoremap <leader>p :call SmartPaste()<CR>
+
+" Tagbar
+nnoremap <F3> :TagbarToggle f<CR>:set rnu<CR>
