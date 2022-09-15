@@ -144,15 +144,13 @@ command! Mtabvsp call Mtab(1)
 
 noremap <Up> <C-U>
 noremap <Down> <C-D>
-" nnoremap <kMinus> <C-U>
-" nnoremap <kPlus> <C-D>
 inoremap jk <ESC>
 
 " code navigation
 " nnoremap <F12> :call g:ClangGotoDeclaration()<CR>
 nnoremap <F12> :YcmCompleter GoTo<CR>
 " nnoremap <F7> :call g:ClangUpdateQuickFix()<CR>
-nnoremap <F7> ::YcmForceCompileAndDiagnostics<CR>
+" nnoremap <F7> ::YcmForceCompileAndDiagnostics<CR>
 nnoremap <C-_> <C-T>
 nnoremap <F4> :A<CR>
 "Tab navigation
@@ -190,18 +188,13 @@ endif
 set timeoutlen=1000 ttimeoutlen=0
 
 "System clipboard support
-nnoremap <leader>v "+
-vnoremap <leader>v "+
+set clipboard=unnamedplus
+" nnoremap <leader>v "+
+" vnoremap <leader>v "+
 
 "Simplified access to 0 register
 nnoremap <leader>o "0
 vnoremap <leader>o "0
-
-" resize panes
-" nnoremap <silent> <Right> :vertical resize +5<cr>
-" nnoremap <silent> <Left> :vertical resize -5<cr>
-" nnoremap <silent> <Down> :resize +5<cr>
-" nnoremap <silent> <Up> :resize -5<cr>
 
 " quickly close window
 nnoremap <leader>x :x<cr>
@@ -297,8 +290,20 @@ com! Xmllint :%!xmllint --format -
 
 " Smart paste
 nnoremap <leader>p :call SmartPaste()<CR>
+nnoremap <leader>y yiW
 
 " Tagbar
 nnoremap <F3> :TagbarToggle f<CR>:set rnu<CR>
 " YCM
 let g:ycm_auto_hover=''
+
+" vimdiff
+if &diff
+    syntax off
+endif
+
+" svnlog
+function! F7SvndiffFunc()
+    execute 'nnoremap <F7> yiW:!svnlog diff -r <C-R>"<CR>'
+endfunction
+command! F7svndiff call F7SvndiffFunc()
