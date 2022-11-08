@@ -326,8 +326,9 @@ endfunction
 
 function! SvnlogMapKeys()
     nnoremap <F6> :execute Svnlog()<CR>
-    nnoremap <F7> yiW::execute SvnlogDiff(<C-R>")<CR>
     call feedkeys("/^[0-9]\<CR>")
+    "nnoremap <F7> yiW::execute SvnlogDiff(<C-R>")<CR>
+    nnoremap <F7> yiW:!tmux split-pane "svnlog diff -r <C-R>""<CR><CR>
 endfunction
 
 command! SvnlogMapKeys execute SvnlogMapKeys()
