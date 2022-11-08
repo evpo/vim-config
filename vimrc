@@ -37,8 +37,8 @@ set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
 set background=light
-" color zellner
-color vc
+color industry
+" color vc
 set autoread " Reload files changed outside vim
 " set cursorline
 set laststatus=2
@@ -300,10 +300,34 @@ let g:ycm_auto_hover=''
 " vimdiff
 if &diff
     syntax off
+    colorscheme industry
+    nnoremap <leader>q :qa<cr>
 endif
 
 " svnlog
-function! F7SvndiffFunc()
-    execute 'nnoremap <F7> yiW:!svnlog diff -r <C-R>"<CR>'
+function! SvnlogEx(svn_root, exclude_bbot)
+    execute "1,$d"
+    let exclude_bbot_option=""
+    if (a:exclude_bbot)
+        let exclude_bbot_option=" --exclude-bbot "
+    endif
+    let output_lines = systemlist("svnlog log --svn-root " . a:svn_root . exclude_bbot_option . " --days 5")
+    call append(0, output_lines)
 endfunction
-command! F7svndiff call F7SvndiffFunc()
+
+function! Svnlog()
+    let svn_root = $SVNROOT
+    call SvnlogEx(svn_root, 1)
+endfunction
+
+function! SvnlogDiff(rev)
+    call feedkeys(':!tmux split-pane "svnlog diff -r ' . a:rev . '"')
+endfunction
+
+function! SvnlogMapKeys()
+    nnoremap <F6> :execute Svnlog()<CR>
+    nnoremap <F7> yiW::execute SvnlogDiff(<C-R>")<CR>
+    call feedkeys("/^[0-9]\<CR>")
+endfunction
+
+command! SvnlogMapKeys execute SvnlogMapKeys()
