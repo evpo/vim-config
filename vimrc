@@ -37,8 +37,9 @@ set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
 set background=light
-color industry
+" color industry
 " color vc
+color default
 set autoread " Reload files changed outside vim
 " set cursorline
 set laststatus=2
@@ -87,7 +88,7 @@ vnoremap <tab> %
 
 function! UpdateCscope()
     cs kill 0
-    !if [ -x scripts/update-cscope ]; then scripts/update-cscope; else update-cscope; fi
+    !if [ -x scripts/update-cscope ]; then scripts/update-cscope; else cscope -Rb ; fi
     cs add cscope.out
 endfunction
 
