@@ -333,3 +333,7 @@ function! SvnlogMapKeys()
 endfunction
 
 command! SvnlogMapKeys execute SvnlogMapKeys()
+
+if filereadable("cscope.out")
+    call ReloadCscope()
+endif
