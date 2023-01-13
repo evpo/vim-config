@@ -171,9 +171,11 @@ nnoremap <Leader>wj :resize +10<CR>
 "stty ixany
 "stty ixoff -ixon
 nnoremap <silent> <c-s> :w<CR>
-"let g:clang_use_library=1
-" TODO: activate clang again
-"let g:clang_complete_copen=1
+
+if filereadable("disable_ycm.flag")
+    let g:loaded_youcompleteme = 1
+endif
+
 set completeopt=menu
 inoremap <Tab> <C-R>=pumvisible() ? "\<lt>C-N>\<lt>C-y>" : "\<lt>Tab>"<CR>
 inoremap <C-@> <C-R>="\<lt>C-X>\<lt>C-U>\<lt>C-P>"<CR>
@@ -184,8 +186,6 @@ else
     let g:clang_library_path='C:/Program Files (x86)/LLVM/bin'
 endif
 
-"let g:clang_auto_user_options='compile_commands.json'
-"let g:clang_debug=1
 set timeoutlen=1000 ttimeoutlen=0
 
 "System clipboard support
