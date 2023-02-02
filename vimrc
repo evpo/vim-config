@@ -39,7 +39,7 @@ set imsearch=0
 " color industry
 " color vc
 color default
-set background=dark
+set background=light
 set autoread " Reload files changed outside vim
 " set cursorline
 set laststatus=2
