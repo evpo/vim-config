@@ -22,7 +22,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 " End Vundle
 " --------------
-
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 " Leader is spacebar
 let mapleader = " "
 syntax on
@@ -88,7 +88,7 @@ vnoremap <tab> %
 
 function! UpdateCscope()
     cs kill 0
-    !if [ -x scripts/update-cscope ]; then scripts/update-cscope; else cscope -Rb ; fi
+    !if [ -x scripts/update-cscope ]; then scripts/update-cscope; else update-cscope ; fi
     cs add cscope.out
 endfunction
 
