@@ -40,6 +40,8 @@ set imsearch=0
 " color vc
 color default
 set background=light
+" Color in Quick Fix windows
+hi QuickFixLine guibg=white guifg=NONE
 set autoread " Reload files changed outside vim
 " set cursorline
 set laststatus=2
@@ -150,6 +152,7 @@ inoremap jk <ESC>
 " code navigation
 " nnoremap <F12> :call g:ClangGotoDeclaration()<CR>
 nnoremap <F12> :YcmCompleter GoTo<CR>
+nnoremap <Leader>tr :YcmCompleter GoToReferences<CR>
 " nnoremap <F7> :call g:ClangUpdateQuickFix()<CR>
 " nnoremap <F7> ::YcmForceCompileAndDiagnostics<CR>
 nnoremap <C-_> <C-T>
@@ -230,13 +233,13 @@ let NERDTreeIgnore=['\.o$[[file]]','\.d$[[file]]']
 
 " ctrl-p section
 let g:ctrlp_working_path_mode = '0'
-let g:ctrlp_max_files = 40000
+let g:ctrlp_max_files = 240000
 let g:ctrlp_follow_symlinks = '1'
 let g:ctrlp_custom_ignore = {
             \ 'file': '\v\.(exe|so|dll|obj|o|d|dep)$'
             \ }
 " Source files in vimgrep
-let @s = "./**/*.c ./**/*.h ./**/*.hpp ./**/*.cpp"
+let @s = "./**/*.c ./**/*.h ./**/*.hpp ./**/*.cpp ./**/*.cc"
 
 " Insert space
 nnoremap <leader>r i<space><esc>
