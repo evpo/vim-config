@@ -18,11 +18,12 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'gregsexton/gitv'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " End Vundle
 " --------------
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 " Leader is spacebar
 let mapleader = " "
 syntax on
@@ -232,12 +233,15 @@ nnoremap <leader><F9> :NERDTreeFind<CR>:set rnu<CR>
 let NERDTreeIgnore=['\.o$[[file]]','\.d$[[file]]']
 
 " ctrl-p section
-let g:ctrlp_working_path_mode = '0'
-let g:ctrlp_max_files = 240000
-let g:ctrlp_follow_symlinks = '1'
-let g:ctrlp_custom_ignore = {
-            \ 'file': '\v\.(exe|so|dll|obj|o|d|dep)$'
-            \ }
+" let g:ctrlp_working_path_mode = '0'
+" let g:ctrlp_max_files = 240000
+" let g:ctrlp_follow_symlinks = '1'
+" let g:ctrlp_custom_ignore = {
+"             \ 'file': '\v\.(exe|so|dll|obj|o|d|dep)$'
+"             \ }
+" fzf
+nnoremap <c-p> :Files<CR>
+
 " Source files in vimgrep
 let @s = "./**/*.c ./**/*.h ./**/*.hpp ./**/*.cpp ./**/*.cc"
 
