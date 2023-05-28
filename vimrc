@@ -20,6 +20,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'gregsexton/gitv'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+Plugin 'r08ertliu/cscope-fzf'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " End Vundle
