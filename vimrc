@@ -41,7 +41,7 @@ set imsearch=0
 " color industry
 " color vc
 color default
-set background=light
+set background=dark
 " Color in Quick Fix windows
 hi QuickFixLine guibg=white guifg=NONE
 set autoread " Reload files changed outside vim
@@ -108,6 +108,7 @@ endfunction
 
 highlight lCursor guifg=NONE guibg=Cyan
 highlight Visual ctermfg=Black ctermbg=White
+highlight YcmErrorText ctermfg=Black ctermbg=White
 
 command! EnableSpell execute "setlocal spell spelllang=ru_ru,en_gb"
 command! DisableSpell execute "setlocal spell!"
