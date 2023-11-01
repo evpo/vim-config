@@ -41,7 +41,8 @@ set imsearch=0
 " color industry
 " color vc
 color default
-set background=light
+"set background=light
+set background=dark
 " Color in Quick Fix windows
 hi QuickFixLine guibg=white guifg=NONE
 set autoread " Reload files changed outside vim
@@ -108,6 +109,8 @@ endfunction
 
 highlight lCursor guifg=NONE guibg=Cyan
 highlight Visual ctermfg=Black ctermbg=White
+highlight YcmErrorLine ctermfg=Black ctermbg=Blue
+"highlight YcmErrorText ctermfg=White ctermbg=Black
 
 command! EnableSpell execute "setlocal spell spelllang=ru_ru,en_gb"
 command! DisableSpell execute "setlocal spell!"
@@ -198,9 +201,8 @@ set clipboard=unnamedplus
 " nnoremap <leader>v "+
 " vnoremap <leader>v "+
 
-"Simplified access to 0 register
-nnoremap <leader>o "0
-vnoremap <leader>o "0
+" Calculation
+noremap <leader>oe :.!bc<CR>
 
 " quickly close window
 nnoremap <leader>x :x<cr>
@@ -241,7 +243,8 @@ let NERDTreeIgnore=['\.o$[[file]]','\.d$[[file]]']
 "             \ 'file': '\v\.(exe|so|dll|obj|o|d|dep)$'
 "             \ }
 " fzf
-nnoremap <c-p> :Files<CR>
+nnoremap <c-p><c-p> :Files<CR>
+nnoremap <c-p>o :GitFiles<CR>
 
 " Source files in vimgrep
 let @s = "./**/*.c ./**/*.h ./**/*.hpp ./**/*.cpp ./**/*.cc"
