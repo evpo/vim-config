@@ -202,7 +202,7 @@ set clipboard=unnamedplus
 " vnoremap <leader>v "+
 
 " Calculation
-noremap <leader>oe :.!bc<CR>
+noremap <leader>oe :.!python3 -c 'import sys; s=sys.stdin.read(); print(s.strip(), "=", eval(s));'<CR>
 
 " quickly close window
 nnoremap <leader>x :x<cr>

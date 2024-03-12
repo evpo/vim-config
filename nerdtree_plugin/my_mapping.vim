@@ -1,8 +1,8 @@
 call NERDTreeAddKeyMap({
        \ 'key': '<F5>',
        \ 'callback': 'NERDTreeHbopenHandler',
-       \ 'quickhelpText': 'echo call hb-start <file>',
-       \ 'scope': 'FileNode' })
+       \ 'quickhelpText': 'echo call hb-open <file>',
+       \ 'scope': 'Node' })
 
 function! NERDTreeHbopenHandler(dirnode)
     let treenode = g:NERDTreeFileNode.GetSelected()
