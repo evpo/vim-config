@@ -179,6 +179,7 @@ nnoremap <Leader>wj :resize +10<CR>
 "stty ixany
 "stty ixoff -ixon
 nnoremap <silent> <c-s> :w<CR>
+nnoremap <silent> <Leader>s :w<CR>
 
 if filereadable("disable_ycm.flag")
     let g:loaded_youcompleteme = 1
@@ -203,6 +204,10 @@ set clipboard=unnamedplus
 
 " Calculation
 noremap <leader>oe :.!python3 -c 'import sys; s=sys.stdin.read(); print(s.strip(), "=", eval(s));'<CR>
+" RST headers
+noremap <leader>o= :.!python3 -c 'import sys; s=sys.stdin.read(); l=len(s)-1; print(s+"="*l);'<CR>
+noremap <leader>o- :.!python3 -c 'import sys; s=sys.stdin.read(); l=len(s)-1; print(s+"-"*l);'<CR>
+noremap <leader>o~ :.!python3 -c 'import sys; s=sys.stdin.read(); l=len(s)-1; print(s+"~"*l);'<CR>
 
 " quickly close window
 nnoremap <leader>x :x<cr>
@@ -251,9 +256,6 @@ let @s = "./**/*.c ./**/*.h ./**/*.hpp ./**/*.cpp ./**/*.cc"
 
 " Insert space
 nnoremap <leader>r i<space><esc>
-
-" Split line
-nnoremap <leader>e i<CR><esc>
 
 " Copy file name to the buffer
 command! Cp execute "let @+=expand('%:t') . ':' . line('.')"
@@ -306,6 +308,10 @@ nnoremap <leader>y yiW
 
 " Tagbar
 nnoremap <F3> :TagbarToggle f<CR>:set rnu<CR>
+
+" Free
+" nnoremap <leader>e
+
 " YCM
 let g:ycm_auto_hover=''
 
