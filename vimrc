@@ -202,12 +202,16 @@ set clipboard=unnamedplus
 " nnoremap <leader>v "+
 " vnoremap <leader>v "+
 
+" <Leader>o section
+" -------------------
 " Calculation
 noremap <leader>oe :.!python3 -c 'import sys; s=sys.stdin.read(); print(s.strip(), "=", eval(s));'<CR>
 " RST headers
 noremap <leader>o= :.!python3 -c 'import sys; s=sys.stdin.read(); l=len(s)-1; print(s+"="*l);'<CR>
 noremap <leader>o- :.!python3 -c 'import sys; s=sys.stdin.read(); l=len(s)-1; print(s+"-"*l);'<CR>
 noremap <leader>o~ :.!python3 -c 'import sys; s=sys.stdin.read(); l=len(s)-1; print(s+"~"*l);'<CR>
+"copy content of the entire line
+nnoremap <leader>oy ^y$
 
 " quickly close window
 nnoremap <leader>x :x<cr>
@@ -320,6 +324,7 @@ if &diff
     syntax off
     colorscheme industry
     nnoremap <leader>q :qa<cr>
+    let g:loaded_youcompleteme = 1
 endif
 
 " svnlog
